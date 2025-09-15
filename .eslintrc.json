@@ -1,16 +1,15 @@
 {
-  "env": {
-    "node": true,
-    "jest": true,
-    "es2021": true
-  },
-  "extends": ["eslint:recommended", "plugin:node/recommended", "prettier"],
-  "parserOptions": {
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
+  "env": { "es2023": true, "node": true },
+  "parserOptions": { "ecmaVersion": 2023, "sourceType": "module" },
+  "plugins": ["vitest"],
+  "extends": ["plugin:vitest/recommended"],
+  "overrides": [
+    {
+      "files": ["**/*.test.js"],
+      "env": { "vitest/globals": true }
+    }
+  ],
   "rules": {
-    "no-unused-vars": ["warn", { "args": "none" }],
-    "no-console": "off"
+    "node/no-unsupported-features/es-syntax": "off"
   }
 }

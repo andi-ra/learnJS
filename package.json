@@ -1,4 +1,8 @@
 {
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "name": "learn-js",
   "version": "0.1.0",
   "description": "A small JavaScript learning workspace",
@@ -8,18 +12,24 @@
   },
   "scripts": {
     "start": "node src/index.js",
-    "test": "jest",
+    "test": "vitest",
+    "watch": "vitest",
+    "coverage": "vitest run --coverage",
     "lint": "eslint .",
-    "fix": "eslint --fix ."
+    "fix": "eslint --fix .",
+    "day": "node tools/run-day.mjs",
+    "day:watch": "node tools/run-day.mjs --watch"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-  "jest": "^26.6.3",
+    "@vitest/coverage-v8": "^3.2.4",
     "eslint": "^8.50.0",
-    "prettier": "^2.8.8",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-node": "^11.1.0"
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-vitest": "^0.5.4",
+    "prettier": "^2.8.8",
+    "vitest": "^3.2.4"
   }
 }
