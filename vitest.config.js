@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 const root = dirname(fileURLToPath(import.meta.url)); // absolute repo root
 
 export default defineConfig({
-  root, // <-- force Vitest to use the repo root no matter where it’s launched from
+  root, 
   test: {
     include: ['**/exercises/**/exercise.test.js'], // CWD-agnostic
     exclude: ['**/exercises/_template/**'],
